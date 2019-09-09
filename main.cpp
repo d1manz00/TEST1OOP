@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -14,15 +15,23 @@ class ethernetUser
             float balance;
             float price;
         public:
-    void newInput (string f, string i, string o, string num, int sped, float bal, float pr)
+    vector <ethernetUser> usrArr;
+    void newInput ()
         {
-            Name = f;
-            lastName = i;
-            veryLastName = o;
-            number = num;
-            speed = sped;
-            balance = bal;
-            price = pr;
+            cout << "Name: ";
+            cin >> Name;
+            cout << "Last Name: ";
+            cin >> lastName;
+            cout << "VeryLastName: ";
+            cin >> veryLastName;
+            cout << "Phone Number: ";
+            cin >> number;
+            cout << "Ethernet Speed";
+            cin >> speed;
+            cout << "Number Balance: ";
+            cin >> balance;
+            cout << "Price: ";
+            cin >> price;
         }
     void show ()
         {
@@ -41,46 +50,53 @@ class ethernetUser
                     balance = balance - price;
                 }
             }
-            void diff (int dspeed, float dprice)
+            void diff ()
             {
+                float dspeed, dprice;
+                cout << "diffSpeed: ";
+                cin >> dspeed;
+                cout << "diffPrice: ";
+                cin >> dprice;
                 speed = dspeed;
                 price = dprice;
+                cout << "Ready." <<endl;
             }
     };
 
 
 
-int main()
-{
-    string name, lastName, lastLastName, number;
-    int speed;
-    float balance, price;
-    ethernetUser test;
-    cout << "name: ";
-    cin >> name;
-    cout << "last Name: ";
-    cin >> lastName;
-    cout << "veryLastName: ";
-    cin >> lastLastName;
-    cout << "Phone Number: ";
-    cin >> number;
-    cout << "Ethernet Speed";
-    cin >> speed;
-    cout << "Number Balance: ";
-    cin >> balance;
-    cout << "price: ";
-    cin >> price;
-
-    test.newInput(name, lastName, lastLastName, number, speed, balance, price);
-    test.show();
-    test.donate();
-    test.show();
-    float dspeed, dprice;
-    cout << "dspeed: ";
-    cin >> dspeed;
-    cout << "dprice: ";
-    cin >> dprice;
-    test.diff(dspeed, dprice);
-    test.show();
+int main() {
+    while (true) {
+        string command;
+        cout << "Enter 'help' for give command list." << endl << "Press Enter for quit." << endl;
+        cout << "Enter command: ";
+        cin >> command;
+        if (command == "NewUser") {
+            cout << "Enter User info: ";
+            //!  ethernetUser::newInput();
+            // usrArr.push_back(newInput());
+        } else if (command == "ShowUserInfo") {
+            cout << "Enter User's Name: ";
+            //! cin >> Name ???
+            //!!! ethernetUser::show(Name);
+        } else if (command == "Donate") {
+            //! ethernetUser Name;
+            cout << "Enter User's Name: ";
+            //!! cin >> Name;
+            //!!! ethernetUser::donate(Name);
+        } else if (command == "DiffCondition") {
+            cout << "Enter User's Name: ";
+            //!! cin >> Name;
+            //!!  ethernetUser::diff()
+        } else if (command == "help") {
+            cout << "'NewUser' - Enter New User Info" << endl << "'ShowUserInfo' - Show info about User" << endl
+                 << "'Donate' - Pay Ethernet Bill" << endl << "'DiffCondition' - change condition" << endl
+                 << "'help' - for give help" << endl;
+        }
+        else
+        {
+            break;
+        }
+    }
     return 0;
 }
