@@ -72,12 +72,12 @@ class ethernetUser
 
 
 int main() {
-    /* Вот так работает отлично
     ethernetUser test;
     test.newInput();
-    test.show(); */
-
-    while (true) {
+    test.show();
+    test.donate();
+    test.diff();
+  /*  while (true) {
         ethernetUser test;
           string command;
         cout << "Enter 'help' for give command list." << endl << "Enter q for quit." << endl;
@@ -102,6 +102,6 @@ int main() {
         {
             break;
         }
-    }
+    }*/
     return 0;
 }
