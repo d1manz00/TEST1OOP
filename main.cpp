@@ -7,12 +7,6 @@ using namespace std;
 class ethernetUser
     {
         private:
-        /*HARDCODE (так отображает)
-         *string Name = "a";
-            string lastName = "b";
-            string veryLastName = "c";
-            string  number = "d"; */
-
             string Name;
             string lastName;
             string veryLastName;
@@ -37,7 +31,7 @@ class ethernetUser
         cin >> balance;
         cout << "Price: ";
         cin >> price;
-       // cout << Name << lastName; //!!!Тоже выводит
+        name << lastName; //!!!Тоже выводит
     }
     void show ()
         {
@@ -72,13 +66,10 @@ class ethernetUser
 
 
 int main() {
-    /* Вот так работает отлично
-    ethernetUser test;
-    test.newInput();
-    test.show(); */
-
+   
+ ethernetUser test;
     while (true) {
-        ethernetUser test;
+       
           string command;
         cout << "Enter 'help' for give command list." << endl << "Enter q for quit." << endl;
         cout << "Enter command: ";
